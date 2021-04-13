@@ -9,6 +9,13 @@ use Codecycler\InvoiceShopaholic\NotifyRules\GenerateInvoicePdf;
  */
 class Plugin extends PluginBase
 {
+    public $require = [
+        'Codecycler.NotifyShopaholic',
+        'RainLab.Notify',
+        'Lovata.Shopaholic',
+        'Lovata.OrdersShopaholic',
+    ];
+
     /**
      * Returns information about this plugin.
      *
@@ -17,10 +24,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'InvoiceShopaholic',
-            'description' => 'No description provided yet...',
+            'name'        => 'Invoice for Shopaholic',
+            'description' => 'Adds a send invoice action to the notify plugin',
             'author'      => 'Codecycler',
-            'icon'        => 'icon-leaf'
+            'icon'        => 'icon-bell-o',
         ];
     }
 

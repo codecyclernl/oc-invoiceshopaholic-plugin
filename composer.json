@@ -10,6 +10,8 @@
         }
     ],
     "require": {
-        "renatio/dynamicpdf-plugin": "dev-master"
+        "renatio/dynamicpdf-plugin": "dev-master",
+        "rainlab/notify-plugin": "dev-master",
+        "codecycler/oc-notifyshopaholic-plugin": "dev-main"
     }
 }
