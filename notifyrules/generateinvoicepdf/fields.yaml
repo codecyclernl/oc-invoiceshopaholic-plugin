@@ -1,0 +1,23 @@
+fields:
+    mail_template:
+        label: Mail template
+        type: dropdown
+        placeholder: Select template
+        span: left
+    pdf_template:
+        label: PDF template
+        type: dropdown
+        placeholder: Select template
+        span: right
+    order_number:
+        label: Order number
+        type: text
+        span: left
+    email_subject:
+        label: Email subject
+        type: text
+        span: left
+    email_address:
+        label: Email address
+        type: text
+        span: left

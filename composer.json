@@ -1,0 +1,15 @@
+{
+    "name": "codecycler/oc-invoiceshopaholic-plugin",
+    "description": "Invoice plugin for Shopaholic",
+    "type": "october-plugin",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Sebastiaan Kloos",
+            "email": "sebastiaan@codecycler.com"
+        }
+    ],
+    "require": {
+        "renatio/dynamicpdf-plugin": "dev-master"
+    }
+}
