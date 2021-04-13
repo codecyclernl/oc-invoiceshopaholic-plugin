@@ -1,7 +1,9 @@
 <?php namespace Codecycler\InvoiceShopaholic;
 
+use Event;
 use Backend;
 use System\Classes\PluginBase;
+use Codecycler\InvoiceShopaholic\Classes\Extend\ExtendOrder;
 use Codecycler\InvoiceShopaholic\NotifyRules\GenerateInvoicePdf;
 
 /**
@@ -48,6 +50,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        Event::subscribe(ExtendOrder::class);
     }
 
     public function registerNotificationRules()
