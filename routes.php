@@ -15,6 +15,7 @@ Route::get('/shopaholic/invoice/pdf/{invoiceId}', function ($invoiceId) {
     //
     $data = [
         'obOrder' => $obOrder,
+        'arOrder' => \Lovata\OrdersShopaholic\Classes\Item\OrderItem::make($obOrder->id),
     ];
 
     //
