@@ -4,11 +4,19 @@ fields:
         type: dropdown
         placeholder: Select template
         span: left
+    send_invoice:
+        label: Send invoice
+        type: checkbox
+        span: left
     pdf_template:
         label: PDF template
         type: dropdown
         placeholder: Select template
-        span: right
+        span: left
+        trigger:
+            action: show
+            field: send_invoice
+            condition: checked
     order_number:
         label: Order number
         type: text

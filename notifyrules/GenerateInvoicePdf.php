@@ -50,7 +50,9 @@ class GenerateInvoicePdf extends ActionBase
             $message->subject($twig->render('subject', $data));
             $message->to($twig->render('to', $data));
 
-            $message->attach($filename);
+            if ($this->host->send_invoice) {
+                $message->attach($filename);
+            }
         });
     }
 
