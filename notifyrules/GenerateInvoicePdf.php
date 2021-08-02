@@ -27,8 +27,10 @@ class GenerateInvoicePdf extends ActionBase
         // Get the invoice by order number
         $obOrder = Order::getByNumber($sOrderNumber)->first();
 
-        // Generate PDF by template
-        $filename = storage_path('app/uploads/invoice-' . $sOrderNumber . '.pdf');
+        if ($this->host->send_invoice) {
+            // Generate PDF by template
+            $filename = storage_path('app/uploads/invoice-' . $sOrderNumber . '.pdf');
+        }
 
         //
         $data = array_merge($params, [
@@ -37,8 +39,10 @@ class GenerateInvoicePdf extends ActionBase
         ]);
 
         //
-        PDF::loadTemplate($this->host->pdf_template, $data)
+        if ($this->host->send_invoice) {
+            PDF::loadTemplate($this->host->pdf_template, $data)
             ->save($filename);
+        }
 
         //
         Mail::send($this->host->mail_template, $data, function ($message) use ($data, $filename) {
