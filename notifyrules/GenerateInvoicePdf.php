@@ -27,10 +27,8 @@ class GenerateInvoicePdf extends ActionBase
         // Get the invoice by order number
         $obOrder = Order::getByNumber($sOrderNumber)->first();
 
-        if ($this->host->send_invoice) {
-            // Generate PDF by template
-            $filename = storage_path('app/uploads/invoice-' . $sOrderNumber . '.pdf');
-        }
+        // Generate PDF by template
+        $filename = storage_path('app/uploads/invoice-' . $sOrderNumber . '.pdf');
 
         //
         $data = array_merge($params, [
